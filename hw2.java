@@ -52,15 +52,13 @@ public class hw2 {
 
 	/* main function */
 	public static void main(String[] args) {
-		LinkedList<[Integer]> trainData, testData, valiData;
-
 		/* read files */
 		File trainFile = new File("hw2train.txt");
-		trainData = read(trainFile);
+		LinkedList<[Integer]> trainData = read(trainFile);
 		File testFile = new File("hw2test.txt");
-		testData = read(testFile);
+		LinkedList<[Integer]> testData = read(testFile);
 		File valiFile = new File("hw2validate.txt");
-		valiData = read(valiFile);
+		LinkedList<[Integer]> valiData = read(valiFile);
 
 		/* Q1 */
 		System.out.println("problem 3.1:\n");
