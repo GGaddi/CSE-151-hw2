@@ -45,9 +45,21 @@ public class hw2 {
 		return res;
 	}
 
+	/* helper function to part 1 - classifier */
+	public static int classify (int k, Integer[] data) {
+		return 0;
+	}
+
 	/* function for part 1 */
 	public static void q1(int k, LinkedList<Integer[]> trainData) {
+		/* array holding classification results */
+		int[] res = new int[trainData.size()];
+		/* iterator for the data */
+		Iterator<Integer[]> it = trainData.iterator();
 
+		for (int i = 0; i < trainData.size(); i++) {
+			res[i] = classify(k, it.next());
+		}
 	}
 
 	/* main function */
@@ -65,7 +77,7 @@ public class hw2 {
 		/* Q1 */
 		System.out.println("problem 3.1:\n");
 		int[] k = {1, 3, 5, 11, 16, 21};
-		for(int i = 0; i < k.length; i++) {
+		for (int i = 0; i < k.length; i++) {
 			q1(k[i], trainData);
 		}
 
