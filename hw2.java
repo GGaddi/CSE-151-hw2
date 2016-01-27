@@ -23,7 +23,7 @@ public class hw2 {
 				/* split each line by spaces */
 				String[] vals = line.split(" ");
 				/* array to store values */
-				Integer[] intVals = new Integer[splitLine.length];
+				Integer[] intVals = new Integer[vals.length];
 
 				/* store values as integers */
 				for(int i = 0; i < intVals.length; i++) {
@@ -46,25 +46,27 @@ public class hw2 {
 	}
 
 	/* function for part 1 */
-	public void q1() {
+	public static void q1(int k, LinkedList<Integer[]> trainData) {
 
 	}
 
 	/* main function */
 	public static void main(String[] args) {
+		LinkedList<Integer[]> trainData, testData, valiData;
+
 		/* read files */
 		File trainFile = new File("hw2train.txt");
-		LinkedList<[Integer]> trainData = read(trainFile);
+		trainData = read(trainFile);
 		File testFile = new File("hw2test.txt");
-		LinkedList<[Integer]> testData = read(testFile);
+		testData = read(testFile);
 		File valiFile = new File("hw2validate.txt");
-		LinkedList<[Integer]> valiData = read(valiFile);
+		valiData = read(valiFile);
 
 		/* Q1 */
 		System.out.println("problem 3.1:\n");
 		int[] k = {1, 3, 5, 11, 16, 21};
 		for(int i = 0; i < k.length; i++) {
-			q1(k[i]);
+			q1(k[i], trainData);
 		}
 
 		/* Q2 */
