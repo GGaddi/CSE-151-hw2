@@ -8,6 +8,21 @@
 import java.io.*;
 import java.util.*;
 
+class Pair<dist, label> {         
+    public final double dist;
+    public final int label;
+
+    public Pair(double dist, int label) {         
+        this.dist= dist;
+        this.label= label;
+     }
+     public double getDist(){
+     	return dist;
+     }
+     public int getLabel(){
+     	return label;
+     }
+ }
 public class hw2 {
 	/* function to read files */
 	public static LinkedList<Integer[]> read(File file) {
@@ -50,6 +65,16 @@ public class hw2 {
 		return 0;
 	}
 
+	/* Helper to calculate distance between points with labels*/
+	public static Pair calcDistanceAndLabel(Integer[] first, Integer[] second) {
+		Double distance = 0.0;
+		int value = 0;
+		for(int i = 0; i < first.length-1; i++){
+			value = value + (int)Math.pow((second[i] - first[i]),2);
+		}
+		distance = Math.sqrt(value);
+		return new Pair(distance, first[first.length-1]);
+	}
 	/* function for part 1 */
 	public static void q1(int k, LinkedList<Integer[]> trainData) {
 		/* array holding classification results */
